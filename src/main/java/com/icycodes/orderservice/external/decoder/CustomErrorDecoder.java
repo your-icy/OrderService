@@ -2,7 +2,7 @@ package com.icycodes.orderservice.external.decoder;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.icycodes.orderservice.exceptions.CustomException;
-import com.icycodes.orderservice.model.ErrorResponse;
+import com.icycodes.orderservice.external.response.ErrorResponse;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 import lombok.extern.log4j.Log4j2;

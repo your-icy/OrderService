@@ -1,7 +1,7 @@
 package com.icycodes.orderservice.exceptions;
 
 
-import com.icycodes.orderservice.model.ErrorResponse;
+import com.icycodes.orderservice.external.response.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,5 +17,13 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
                 .errorCode(exception.getErrorCode())
                 .errorMessage(exception.getMessage())
                 .build(), HttpStatus.valueOf(exception.getStatus()));
+    }
+
+    @ExceptionHandler(OrderNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleOrderNotFoundException(OrderNotFoundException exception){
+        return new ResponseEntity<>(ErrorResponse.builder()
+                .errorCode(exception.getErrorCode())
+                .errorMessage(exception.getMessage())
+                .build(), HttpStatus.NOT_FOUND);
     }
 }

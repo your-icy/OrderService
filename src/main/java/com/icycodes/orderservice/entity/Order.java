@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 
+import static jakarta.persistence.GenerationType.TABLE;
+
 @Entity
 @Data
 @Builder
@@ -16,8 +18,15 @@ import java.time.Instant;
 @Table(name = "Order_Details")
 public class Order {
 
+    @TableGenerator(
+            name = "orderGen",
+            table = "ORDER_ID_GEN",
+            pkColumnName = "GEN_KEY",
+            valueColumnName = "GEN_VALUE",
+            pkColumnValue = "ORDER_ID",
+            allocationSize = 1)
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=TABLE, generator="orderGen")
     private Long orderId;
 
     @Column(name = "Product_Id")

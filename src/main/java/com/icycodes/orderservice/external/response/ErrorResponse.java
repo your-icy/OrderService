@@ -1,4 +1,4 @@
-package com.icycodes.orderservice.model;
+package com.icycodes.orderservice.external.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

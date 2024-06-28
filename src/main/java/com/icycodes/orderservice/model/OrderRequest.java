@@ -17,7 +17,7 @@ public class OrderRequest {
 
     private Long totalPrice;
 
-    private PaymentMode paymentMode;;
+    private PaymentMode paymentMode;
 
 
 }

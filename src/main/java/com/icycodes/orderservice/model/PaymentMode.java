@@ -2,11 +2,12 @@ package com.icycodes.orderservice.model;
 
 public enum PaymentMode {
 
-    PAYTM,
+    CASH,
     PAYPAL,
-    UPI,
     CREDIT_CARD,
     DEBIT_CARD,
-    CASH_ON_DELIVERY
+    GOOGLE_PAY,
+    PAYTM,
+    APPLE_PAY
 
 }
